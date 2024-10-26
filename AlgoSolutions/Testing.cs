@@ -19,6 +19,7 @@ public class Testing
     {
         int x1, y1, x2, y2, x, y, count;
         count = 1;
+        string line;
         while (!reader.EndOfStream)
         {
             x1 = int.Parse(reader.ReadLine());
@@ -27,7 +28,7 @@ public class Testing
             y2 = int.Parse(reader.ReadLine());
             x = int.Parse(reader.ReadLine());
             y = int.Parse(reader.ReadLine());
-            Console.WriteLine($"{count++} Test:\n");
+            Console.WriteLine($"{count++} Test:");
             FirstLesson.FirstTask.FirstTask task = new FirstLesson.FirstTask.FirstTask();
             task.TaskSolution(x1, y1, x2, y2, x, y);
         }

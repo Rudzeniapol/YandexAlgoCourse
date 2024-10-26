@@ -5,7 +5,7 @@ using AlgoSolutions;
 
 class Program
 {
-    private static Testing FirstTest = new Testing("Tests\\FirstTest.txt");
+    private static Testing FirstTest = new Testing(@"C:\Users\ffgg9\Desktop\Mylearn\YandexAlgorithmsCourse\AlgoSolutions\AlgoSolutions\FirstLesson\Tests\FirstTaskTests.txt");
 
     public static void Main()
     {

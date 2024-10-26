@@ -10,22 +10,23 @@ public class FirstTask
         StringBuilder str = new StringBuilder("");
         if (y > y2)
         {
-            str.Append("S");
+            str.Append("N");
         }
 
         if (y < y1)
         {
-            str.Append("N");
+            str.Append("S");
         }
 
         if (x > x2)
         {
-            str.Append("W");
+            str.Append("E");
         }
 
         if (x < x1)
         {
-            str.Append("E");
+            str.Append("W");
         }
+        Console.WriteLine(str.ToString());
     }
 }
