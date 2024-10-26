@@ -2,12 +2,12 @@
 
 public class Testing
 {
-    private StreamReader reader;
-    public Testing(string path)
+    private StreamReader _reader;
+    public Testing(string? path)
     {
-        if (File.Exists(path))
+        if (path != null && File.Exists(path))
         {
-            reader = new StreamReader(path);
+            _reader = new StreamReader(path);
         }
         else
         {
@@ -17,20 +17,26 @@ public class Testing
 
     public void RunFirstTaskTests()
     {
-        int x1, y1, x2, y2, x, y, count;
-        count = 1;
-        string line;
-        while (!reader.EndOfStream)
+        if (_reader != StreamReader.Null)
         {
-            x1 = int.Parse(reader.ReadLine());
-            y1 = int.Parse(reader.ReadLine());
-            x2 = int.Parse(reader.ReadLine());
-            y2 = int.Parse(reader.ReadLine());
-            x = int.Parse(reader.ReadLine());
-            y = int.Parse(reader.ReadLine());
-            Console.WriteLine($"{count++} Test:");
-            FirstLesson.FirstTask.FirstTask task = new FirstLesson.FirstTask.FirstTask();
-            task.TaskSolution(x1, y1, x2, y2, x, y);
+            int x1, y1, x2, y2, x, y, count;
+            count = 1;
+            while (!_reader.EndOfStream)
+            {
+                x1 = int.Parse(_reader.ReadLine());
+                y1 = int.Parse(_reader.ReadLine());
+                x2 = int.Parse(_reader.ReadLine());
+                y2 = int.Parse(_reader.ReadLine());
+                x = int.Parse(_reader.ReadLine());
+                y = int.Parse(_reader.ReadLine());
+                Console.WriteLine($"{count++} Test:");
+                FirstLesson.FirstTask.FirstTask task = new FirstLesson.FirstTask.FirstTask();
+                task.TaskSolution(x1, y1, x2, y2, x, y);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Cannot run tests for the task.");
         }
     }
 }
