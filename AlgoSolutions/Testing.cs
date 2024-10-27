@@ -19,7 +19,8 @@ public class Testing
     {
         if (_reader != StreamReader.Null)
         {
-            int x1, y1, x2, y2, x, y, count;
+            int x1, y1, x2, y2, x, y;
+            uint count;
             count = 1;
             while (!_reader.EndOfStream)
             {
@@ -37,6 +38,22 @@ public class Testing
         else
         {
             Console.WriteLine("Cannot run tests for the task.");
+        }
+    }
+
+    public void RunSecondTaskTests()
+    {
+        ulong a, b, c, d;
+        uint count = 1;
+        while (!_reader.EndOfStream)
+        {
+            a = ulong.Parse(_reader.ReadLine());
+            b = ulong.Parse(_reader.ReadLine());
+            c = ulong.Parse(_reader.ReadLine());
+            d = ulong.Parse(_reader.ReadLine());
+            Console.WriteLine($"{count++} Test:");
+            FirstLesson.SecondTask.SecondTask task = new FirstLesson.SecondTask.SecondTask();
+            task.TaskSolution(a, b, c, d);
         }
     }
 }
